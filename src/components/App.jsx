@@ -11,7 +11,7 @@ function App() {
   });
 
   useEffect(async () => {
-    const response = await fetch('http://localhost:2500/api');
+    const response = await fetch('/api');
     const data = await response.json();
 
     setContactObject(data);
