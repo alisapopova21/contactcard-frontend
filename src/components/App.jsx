@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     (async function () {
-      const response = await fetch("https://very-first-backend.onrender.com/api/");
+      const response = await fetch("http://localhost:2500/api/");
       const data = await response.json();
 
       setContactObject(data);
