@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/"
+      "source": "/((?!src|assets|vite.svg|node_modules|@).*)",
+      "destination": "/index.html"
     }
   ]
 }

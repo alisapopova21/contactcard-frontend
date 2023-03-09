@@ -1,24 +1,23 @@
-import Card from './Card';
-import { useState, useEffect } from 'react';
+import Card from "./Card";
+import { useState, useEffect } from "react";
 
 function App() {
-  let [contactObject, setContactObject] = useState({
-    first: "Unknown",
-    last: "Unknown",
-    twitter: "@",
-    notes: "",
-    avatar: ""
-  });
+  let [contactObject, setContactObject] = useState({});
+  let [loading, setLoading] = useState(true);
 
-  useEffect(async () => {
-    const response = await fetch('/api');
-    const data = await response.json();
+  useEffect(() => {
+    (async function () {
+      const response = await fetch("/api");
+      const data = await response.json();
 
-    setContactObject(data);
+      setContactObject(data);
+      setLoading(false);
+    })();
   }, []);
 
   return (
     <Card
+      loading={loading}
       first={contactObject.first}
       last={contactObject.last}
       twitter={contactObject.twitter}

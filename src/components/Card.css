@@ -55,7 +55,7 @@ body {
 #contact a[href*="twitter"]:hover {
   text-decoration: underline;
 }
-#contact img {
+#contact img#avatar {
   width: 12rem;
   height: 12rem;
   background: #c8c8c8;
